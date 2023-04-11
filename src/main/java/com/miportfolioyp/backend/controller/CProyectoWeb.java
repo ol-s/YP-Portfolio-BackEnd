@@ -27,32 +27,32 @@ public class CProyectoWeb {
    
     @GetMapping("/lista") 
     @ResponseBody 
-    public List<ProyectoWeb> listaProyectos(){
+    public List<ProyectoWeb> listaProyectosW(){
         return proyWebServicio.listaProyectos();  
     }
     
     @GetMapping("/find/{id}")  //id es variable so va entre llaves
     @ResponseBody 
-    public ProyectoWeb findProyecto(@PathVariable int id){
+    public ProyectoWeb findProyectoW(@PathVariable int id){
         return proyWebServicio.findProyecto(id);  
     }
 
     @PostMapping ("/new")
     @ResponseBody
-    public String saveProyecto(@RequestBody ProyectoWeb proyecto){
+    public String saveProyectoW(@RequestBody ProyectoWeb proyecto){
         proyWebServicio.saveProyecto(proyecto);
         return "Proyecto creado";   
         //return ResponseEntity.ok().body(proyecto);      //???
     }
   
     @PutMapping("/update")   
-    public String updateProyecto(@RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
+    public String updateProyectoW(@RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
         proyWebServicio.updateProyecto(proyecto);
         return "Proyecto actualizado";
     }
     
     @DeleteMapping("/delete/{id}")
-    public String deleteProyecto(@PathVariable int id){
+    public String deleteProyectoW(@PathVariable int id){
         proyWebServicio.deleteProyecto(id);
         return "Proyecto eliminado";
     }
