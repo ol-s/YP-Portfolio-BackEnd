@@ -36,8 +36,8 @@ public class Experiencia {
     @Column(length=100)
     private String puesto;
     
-    @Lob
-    //@Column(name="descripcion", length=800)
+    //@Lob
+    @Column(name="descripcion", length=800)
     private String descripcion;
     
     private Date fechaInicio;

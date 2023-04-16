@@ -35,7 +35,7 @@ public class ProyectoWeb {
     @Column(length=100)
     private String tituloProyecto;
     
-    @Lob 
+    @Column(length=900) 
     private String descripcion;
     
     //pongo string xq quiero '2022' '2023-2055' etc, no dia/mes/anio

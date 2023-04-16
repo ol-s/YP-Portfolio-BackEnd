@@ -3,6 +3,7 @@
 package com.miportfolioyp.backend.entity;
 
 import com.sun.istack.NotNull;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,20 +24,21 @@ public class Persona {
     private String apellido;    
     private String ocupacion;
 
-    @Lob
+    @Column(length=900)
     //@Column(name="xxxxxxxxxx", length=800) //lenght  ESTE FUNCIONA EN LUGAR DE LOB PARA QUE EL PHPMYADMIN TOME COMO LONGTEXT ETC!!
     //BUE, EL SOBRE MI ME TOMO CON EL LOB,,,EL LEGHT LO TOMA PARA NUM CARACTERES DEL VARCHAR
     private String sobremi;
     
-    @Lob
+    //@Lob
+    @Column(length=900)
     private String experienciasTexto;
     
-    @Lob
+    @Column(length=500)
     private String cv;
         
     private String email;
 
-    @Lob
+    @Lob //estos dejo LOB cos es para links
     private String bannerEntrada;
     @Lob
     private String bannerAvatar;
@@ -50,9 +52,11 @@ public class Persona {
     private String subtitulo1;    
     private String subtitulo2;
 
-    @Lob
+    //@Lob// NO DEJA ESCRIBIR 'ñ', SE CAE EL SERVIDOR O NO EDITA
+    @Column(length=500)
     private String servicios1;
-    @Lob
+    //@Lob
+    @Column(length=500)
     private String servicios2;
     
     private String salida1;

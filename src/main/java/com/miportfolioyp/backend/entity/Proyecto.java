@@ -45,8 +45,8 @@ public class Proyecto {
    // @Column(name="tituloProyecto")
     private String tituloProyecto;
     
-    @Lob
-    //@Column(name="descripcion", length=800)
+    //@Lob
+    @Column(length=900)
     private String descripcion;
 
     //----------------------------------------------------------------------
