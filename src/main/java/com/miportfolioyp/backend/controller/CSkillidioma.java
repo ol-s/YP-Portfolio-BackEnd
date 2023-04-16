@@ -42,13 +42,20 @@ public class CSkillidioma {
         return "Skill creada";  
     }
       
-    @PutMapping("/update")   
+    /*@PutMapping("/update")   
     public String updateSkillD(@RequestBody Skillidioma habil){  //NOMBRE QUE LLEVO A ANGULAR!
                                                                //(que no sean iguales porque no funcionarian dos botones delete diferentes en el mismo servicio, como me paso con proy arq web)
         siServ.updateSkillD(habil);  //NOMBRE DEL METODO EN SKILL-IDIOMA-SERVICIO
         return "Skill actualizada"; //MENSAJE EN POSTMAN
+    }*/
+    
+    @PutMapping("/update/{id}")
+    public String updateSkillD( @PathVariable int id, @RequestBody Skillidioma habil){  //NOMBRE QUE LLEVO A ANGULAR
+        siServ.updateSkillD(habil);  //NOMBRE DEL METODO EN SKILL-IDIOMA-SERVICIO
+        return "Skill actualizada"; //MENSAJE EN POSTMAN
     }
     
+     
     @DeleteMapping("/delete/{id}")
     public String deleteSkillD(@PathVariable int id){
         siServ.deleteSkillD(id);

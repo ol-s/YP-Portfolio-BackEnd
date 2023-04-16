@@ -61,11 +61,16 @@ public class CRed {
     //perooooooooooooooooooooo el postman te crea cualquien id, o sea , pones crear/eliminar/crear, y TE PONE UN ID NUEVO!!  :/
     //express 17 , min 29'https://www.youtube.com/watch?v=ERzG5W7BWAs&list=PL1oXSbt2OIbG2ipcgJLQ8P64rwS-bz9tZ&index=20
     //el ngfor en angular deberia traer los botones con su correspondiente id..H,,, PERO NO LE PUSE PIPES AL NOMBRE DEL BOTON, DEBERIA HACER ESO
-    @PutMapping("/update") 
+    /*@PutMapping("/update") 
     public String updateRed(@RequestBody Red redes){
         redServicio.updateRed(redes);
         return "Red actualizada";
         //return new ResponseEntity(HttpStatus.OK);
+    }*/
+    @PutMapping("/update/{id}") 
+    public String updateRed(@PathVariable int id, @RequestBody Red redes){
+        redServicio.updateRed(redes);
+        return "Red actualizada";
     }
     
     //borrar red

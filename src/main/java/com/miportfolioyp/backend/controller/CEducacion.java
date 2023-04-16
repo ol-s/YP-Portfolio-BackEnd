@@ -130,12 +130,19 @@ public class CEducacion {
         eduServicio.saveEducacion(estudio);
         return "Estudio creado";          
     }
-          
+    
+    /*      
     @PutMapping("/update") 
     public String updateEstudio(@RequestBody Educacion estudio){
         eduServicio.updateEducacion(estudio);
         return "Estudio actualizado";   
+    }*/
+    @PutMapping("/update/{id}") 
+    public String updateEstudio(@PathVariable int id, @RequestBody Educacion estudio){
+        eduServicio.updateEducacion(estudio);
+        return "Estudio actualizado";   
     }
+    
       
     @DeleteMapping("/delete/{id}")
     public String deleteEstudio(@PathVariable int id){

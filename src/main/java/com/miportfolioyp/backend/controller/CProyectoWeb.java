@@ -45,8 +45,13 @@ public class CProyectoWeb {
         //return ResponseEntity.ok().body(proyecto);      //???
     }
   
-    @PutMapping("/update")   
+    /*@PutMapping("/update")   
     public String updateProyectoW(@RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
+        proyWebServicio.updateProyecto(proyecto);
+        return "Proyecto actualizado";
+    }*/
+    @PutMapping("/update/{id}")   
+    public String updateProyectoW(@PathVariable int id, @RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
         proyWebServicio.updateProyecto(proyecto);
         return "Proyecto actualizado";
     }

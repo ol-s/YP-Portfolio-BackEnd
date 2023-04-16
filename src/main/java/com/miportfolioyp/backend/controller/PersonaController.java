@@ -63,12 +63,20 @@ public class PersonaController {
     //para editar, hmmmmmmm, no va id en el parametro????????? parece que no, cos es igual al save pero lo escribimos diferenciado
     //ver edit de AP mas abajo
     //@PutMapping("/update/{id}")    //h le saco el {id} en el express y gh
-    @PutMapping("/update")
-    public String updatePersona(@RequestBody Persona personaN){
+//    @PutMapping("/update")
+//    public String updatePersona(@RequestBody Persona personaN){
+//        persoServicio.updatePersona(personaN); //**999*** este 'updatePersona' es el que se tiene que llamar igual que en el servicio, ojo, no el de arriba
+//        return "Usuario actualizado";
+//        //return new ResponseEntity(HttpStatus.OK);
+//    }                                          //**999*** y siiii, dice PERSOSERVICIOOOOOO PUNTO XXXX,,, (:  POR APURADA VES
+    
+    @PutMapping("/update/{id}")
+    public String updatePersona(@PathVariable int id, @RequestBody Persona personaN){
         persoServicio.updatePersona(personaN); //**999*** este 'updatePersona' es el que se tiene que llamar igual que en el servicio, ojo, no el de arriba
         return "Usuario actualizado";
         //return new ResponseEntity(HttpStatus.OK);
-    }                                          //**999*** y siiii, dice PERSOSERVICIOOOOOO PUNTO XXXX,,, (:  POR APURADA VES
+    } 
+    
     
     //@PathVariable es ruta variable, dinamica,varia el id
     @DeleteMapping("/delete/{id}")

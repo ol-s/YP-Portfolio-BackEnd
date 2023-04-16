@@ -60,11 +60,16 @@ public class CProyecto {
         //return ResponseEntity.ok().body(proyecto);      //???
     }
   
-    @PutMapping("/update")   
+    /*@PutMapping("/update")   
     public String updateProyecto(@RequestBody Proyecto proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
         proyectoServicio.updateProyecto(proyecto);
         return "Proyecto actualizado";
         //return new ResponseEntity(HttpStatus.OK);
+    }*/
+    @PutMapping("/update/{id}")   
+    public String updateProyecto(@PathVariable int id, @RequestBody Proyecto proyecto){ 
+        proyectoServicio.updateProyecto(proyecto);
+        return "Proyecto actualizado";
     }
     
     @DeleteMapping("/delete/{id}")

@@ -42,13 +42,17 @@ public class CExperiencia {
     public String saveExperiencia(@RequestBody Experiencia textoExp){
         experienciaServicio.saveExperiencia(textoExp);
         return "Experiencia creada";  ///saco los return
-//        //return ResponseEntity.ok().body(pers);
+        //return ResponseEntity.ok().body(pers);
     }
     
-    //para editar 
-    //@PutMapping ("update/{id}") //con id pongo /numero id, editar id abajo en los campos, y crea otra experiencia etc, conotro id ma (:  
-    @PutMapping("/update")   
+    
+    /*@PutMapping("/update")   
     public String updateExperiencia(@RequestBody Experiencia textoExp){
+        experienciaServicio.updateExperiencia(textoExp);
+        return "Experiencia actualizada"; 
+    }*/
+    @PutMapping ("update/{id}")  
+    public String updateExperiencia(@PathVariable int id, @RequestBody Experiencia textoExp){
         experienciaServicio.updateExperiencia(textoExp);
         return "Experiencia actualizada"; 
     }

@@ -27,6 +27,8 @@ public class SSkillArq {
         saRepo.save(habilidad);
     }
 
+    //pongo by id en el controller porque puse by id en angular,k, sino crea una skill nueva el lugar de editar
+    //no se si no va como el find y el delete aca
     public void updateSkillA(SkillArq habilidad) {
         saRepo.save(habilidad);
     }

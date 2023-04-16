@@ -42,9 +42,14 @@ public class CSkillWeb {
         return "Skill creada";  
     }
       
-    @PutMapping("/update")   
+    /*@PutMapping("/update")   
     public String updateSkillW(@RequestBody SkillWeb habil){  //NOMBRE QUE LLEVO A ANGULAR!                                                          
         swServ.updateSkillW(habil);  //NOMBRE DEL METODO EN SKILL-web-SERVICIO
+        return "Skill actualizada"; //MENSAJE EN POSTMAN
+    }*/
+    @PutMapping("/update/{id}") 
+    public String updateSkillW(@PathVariable int id, @RequestBody SkillWeb habil){  //NOMBRE QUE LLEVO A ANGULAR!                                                          
+        swServ.updateSkillW(habil);  //NOMBRE DEL METODO EN SKILL-ARQ-SERVICIO, no me toma el id aca
         return "Skill actualizada"; //MENSAJE EN POSTMAN
     }
     
