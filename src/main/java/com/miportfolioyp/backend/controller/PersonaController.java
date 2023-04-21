@@ -84,6 +84,20 @@ public class PersonaController {
         persoServicio.deletePersona(id);
         return "Usuario eliminado";
     }
+    
+    
+    
+    
+     //Login 19-4-23
+    /*delservicio autenticacion en angular 
+     export class AutenticacionService {
+     url = 'http://localhost:8080/persona/autenticacion/login'*/
+    @PostMapping ("/autenticacion/login")
+    @ResponseBody
+    public Persona loginPersona(@RequestBody Persona pers) {
+        return persoServicio.loginPersona(pers.getEmail(), pers.getClave());
+    }
+    
 }
     
 

@@ -35,8 +35,10 @@ public class Persona {
     
     @Column(length=500)
     private String cv;
-        
+    
+    //para el login
     private String email;
+    private String clave;
 
     @Lob //estos dejo LOB cos es para links
     private String bannerEntrada;
@@ -72,7 +74,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(String nombre, String apellido, String ocupacion, String sobremi, String experienciasTexto, String cv, String email, String bannerEntrada, String bannerAvatar, String bannerEducacion, String bannerSalida, String subtitulo1, String subtitulo2, String servicios1, String servicios2, String salida1, String salida2, String copyrights, String logoBrand) {
+    public Persona(String nombre, String apellido, String ocupacion, String sobremi, String experienciasTexto, String cv, String email, String clave, String bannerEntrada, String bannerAvatar, String bannerEducacion, String bannerSalida, String subtitulo1, String subtitulo2, String servicios1, String servicios2, String salida1, String salida2, String copyrights, String logoBrand) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.ocupacion = ocupacion;
@@ -80,6 +82,7 @@ public class Persona {
         this.experienciasTexto = experienciasTexto;
         this.cv = cv;
         this.email = email;
+        this.clave = clave;
         this.bannerEntrada = bannerEntrada;
         this.bannerAvatar = bannerAvatar;
         this.bannerEducacion = bannerEducacion;
@@ -93,6 +96,7 @@ public class Persona {
         this.copyrights = copyrights;
         this.logoBrand = logoBrand;
     }
+
     
     //--------------------------------------------------------
 
@@ -158,6 +162,14 @@ public class Persona {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getBannerEntrada() {
@@ -255,6 +267,8 @@ public class Persona {
     public void setLogoBrand(String logoBrand) {
         this.logoBrand = logoBrand;
     }
+
+    
 
     
     

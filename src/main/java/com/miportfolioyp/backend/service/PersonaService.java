@@ -75,6 +75,26 @@ public class PersonaService {
                                              //que tiene aca PersonaRepo, vinculado al JPA como dice mas arriba
     
     
-     
+    
+    
+    
+    
+    
+    //Login------19-4-23
+    public Persona loginPersona(String email, String clave) {
+        List <Persona> personas = repoPers.findByEmailAndClave(email, clave);
+        if(!personas.isEmpty()){
+            return personas.get(0); //si la lista no esta vacía devuelve la de la posición 0
+        }
+        return null;
+    }
+    
+    //login con dto //k ,nope
+    /*public PersonaDto loginPersona(String email, String clave){
+	Persona persona = persoRepo.findByEmailAndClave(email, clave);
+	PersonaDto personaDto = new PersonaDto(persona.getId(), persona.getHola(), persona.getNombre(), persona.getApellido(),persona.getCargo());
+	return personaDto;
+    }*/
+    
 
 }
