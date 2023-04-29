@@ -1,11 +1,3 @@
-///////////////////////////////////////este probs no use, ponerlo como parrafo en persona, o solo descripcion aca
-//////////////////////////////////////lo dejo escrito pero no genero la tabla en phmyadmin
-//////////////////////////////////////o lo dejo solo con id y descripcion?  K tiene asi separado elsobremi
-
-/////////////////////////////////////////si no uso este para experiencia usar para sobre mi -- id+descripcion
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 package com.miportfolioyp.backend.entity;
 
 import java.util.Date;
@@ -21,7 +13,7 @@ import javax.persistence.Lob;
 public class Experiencia {
     
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)   //para autoincrementar, LUISINA PUSO   AUTO, h dijo que autoincrementaba en cualquier numero,tipo 1,2,51...                     
+    @GeneratedValue(strategy = GenerationType.IDENTITY)                     
     private int id;
     
     @Column(length=100)
@@ -40,19 +32,15 @@ public class Experiencia {
     @Column(name="descripcion", length=800)
     private String descripcion;
     
-    private Date fechaInicio;
-    private Date fechaFin;       //lo dejoasi por ahora, me da error en 'date' creo que hay que importar algo
-    //private boolean esTrabajoActual;
-    
-    
+    private String fechaInicio;
+    private String fechaFin;     
+       
        
     //----------------------------------------------------------------
     public Experiencia() {
     }
 
-    
-
-    public Experiencia(String rubro, String logoLugar, String lugar, String puesto, String descripcion, Date fechaInicio, Date fechaFin, boolean esTrabajoActual) {
+    public Experiencia(String rubro, String logoLugar, String lugar, String puesto, String descripcion, String fechaInicio, String fechaFin) {
         this.rubro = rubro;
         this.logoLugar = logoLugar;
         this.lugar = lugar;
@@ -60,12 +48,9 @@ public class Experiencia {
         this.descripcion = descripcion;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
-        //this.esTrabajoActual = esTrabajoActual;
     }
 
    //----------------------------------------------------------------
-    
-    
 
     public int getId() {
         return id;
@@ -115,32 +100,21 @@ public class Experiencia {
         this.descripcion = descripcion;
     }
 
-    public Date getFechaInicio() {
+    public String getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(Date fechaInicio) {
+    public void setFechaInicio(String fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public Date getFechaFin() {
+    public String getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(Date fechaFin) {
+    public void setFechaFin(String fechaFin) {
         this.fechaFin = fechaFin;
     }
-
-//    public boolean isEsTrabajoActual() {
-//        return esTrabajoActual;
-//    }
-//
-//    public void setEsTrabajoActual(boolean esTrabajoActual) {
-//        this.esTrabajoActual = esTrabajoActual;
-//    }
-    
-    
- 
-    
+       
     
 }

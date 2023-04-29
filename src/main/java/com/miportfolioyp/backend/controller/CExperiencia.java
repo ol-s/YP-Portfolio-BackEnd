@@ -1,5 +1,3 @@
-/////////////////////////////////////////si no uso este para experiencia usar para sobre mi -- id+descripcion
-///////////////////////////////////////////////////////////////////////////////////////////////////////////
 package com.miportfolioyp.backend.controller;
 
 import com.miportfolioyp.backend.entity.Experiencia;
@@ -30,10 +28,9 @@ public class CExperiencia {
         return experienciaServicio.listaExp();  
     }
 
-    @GetMapping("/find/{id}")   ///////////////////////////ojo con las barras
+    @GetMapping("/find/{id}") 
     @ResponseBody 
     public Experiencia findExperiencia(@PathVariable int id){
-        //si retorna vacío no pasa nada
         return experienciaServicio.findExperiencia(id);  
     }
 
@@ -41,16 +38,9 @@ public class CExperiencia {
     @ResponseBody
     public String saveExperiencia(@RequestBody Experiencia textoExp){
         experienciaServicio.saveExperiencia(textoExp);
-        return "Experiencia creada";  ///saco los return
-        //return ResponseEntity.ok().body(pers);
+        return "Experiencia creada"; 
     }
     
-    
-    /*@PutMapping("/update")   
-    public String updateExperiencia(@RequestBody Experiencia textoExp){
-        experienciaServicio.updateExperiencia(textoExp);
-        return "Experiencia actualizada"; 
-    }*/
     @PutMapping ("update/{id}")  
     public String updateExperiencia(@PathVariable int id, @RequestBody Experiencia textoExp){
         experienciaServicio.updateExperiencia(textoExp);
@@ -62,23 +52,7 @@ public class CExperiencia {
         experienciaServicio.deleteExperiencia(id);
         return "Experiencia eliminada"; 
     }
-    
-    
-    //----------------------------------------------------------sin el return seria    
-//    @PostMapping("/create")
-//    public void create(@RequestBody Experiencia textoExp) {
-//        experienciaServicio.saveExperiencia(textoExp);   ////////////////////////viene del servicio, que tenga el mismo nombre
-//    }
-//    
-//    @PutMapping("/update")
-//    public void update(@RequestBody Experiencia textoExp) {
-//        experienciaServicio.updateExperiencia(textoExp);
-//    }
-//    
-//    @DeleteMapping("/delete/{id}")
-//    public void delete(@PathVariable ("id") int id){
-//        experienciaServicio.deleteExperiencia(id);
-//    }
+   
     
 }
 
