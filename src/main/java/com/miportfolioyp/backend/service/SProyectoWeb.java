@@ -22,7 +22,7 @@ public class SProyectoWeb {
         return proyWebRepo.findById(id).orElse(null);   
     }
     
-    public void saveProyecto(ProyectoWeb proyecto) { //////////////////////////////mismos nombres en el controller, OJO!!
+    public void saveProyecto(ProyectoWeb proyecto) {
         proyWebRepo.save(proyecto);  
     }  
     

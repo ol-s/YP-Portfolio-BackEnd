@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-@Transactional //para persistencia en la base de datos
+@Transactional 
 public class SSkillArq {
   
  @Autowired RSkillArq saRepo;   
@@ -27,8 +27,6 @@ public class SSkillArq {
         saRepo.save(habilidad);
     }
 
-    //pongo by id en el controller porque puse by id en angular,k, sino crea una skill nueva el lugar de editar
-    //no se si no va como el find y el delete aca
     public void updateSkillA(SkillArq habilidad) {
         saRepo.save(habilidad);
     }

@@ -1,5 +1,3 @@
-////////////////////////////////////hice de nuevo cos modifique todo en angular para meterlo dentro de 'persona'
-
 package com.miportfolioyp.backend.entity;
 
 import com.sun.istack.NotNull;
@@ -11,13 +9,12 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 
 
-@Entity  //para que se cree la tabla c esos atributos @Entity,serializable no se si es de h porque tiene varias personas? lo saque
-//public class Persona implements Serializable {
+@Entity  
 public class Persona {
 
     @Id
     @NotNull
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  //para autoincrementar, LUISINA PUSO   AUTO
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
        
     private String nombre;   
@@ -25,11 +22,8 @@ public class Persona {
     private String ocupacion;
 
     @Column(length=900)
-    //@Column(name="xxxxxxxxxx", length=800) //lenght  ESTE FUNCIONA EN LUGAR DE LOB PARA QUE EL PHPMYADMIN TOME COMO LONGTEXT ETC!!
-    //BUE, EL SOBRE MI ME TOMO CON EL LOB,,,EL LEGHT LO TOMA PARA NUM CARACTERES DEL VARCHAR
     private String sobremi;
     
-    //@Lob
     @Column(length=900)
     private String experienciasTexto;
     
@@ -40,7 +34,7 @@ public class Persona {
     private String email;
     private String clave;
 
-    @Lob //estos dejo LOB cos es para links
+    @Lob //dejo LOB xq es para links
     private String bannerEntrada;
     @Lob
     private String bannerAvatar;
@@ -48,16 +42,13 @@ public class Persona {
     private String bannerEducacion;
     @Lob
     private String bannerSalida;
-
     
-    //para proyectos
     private String subtitulo1;    
     private String subtitulo2;
 
-    //@Lob// NO DEJA ESCRIBIR 'ñ', SE CAE EL SERVIDOR O NO EDITA
     @Column(length=500)
     private String servicios1;
-    //@Lob
+    
     @Column(length=500)
     private String servicios2;
     
@@ -96,8 +87,7 @@ public class Persona {
         this.copyrights = copyrights;
         this.logoBrand = logoBrand;
     }
-
-    
+   
     //--------------------------------------------------------
 
     public int getId() {
@@ -267,9 +257,6 @@ public class Persona {
     public void setLogoBrand(String logoBrand) {
         this.logoBrand = logoBrand;
     }
-
-    
-
-    
+   
     
 }

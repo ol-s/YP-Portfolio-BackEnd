@@ -10,39 +10,29 @@ import javax.persistence.Lob;
 @Entity
 public class Proyecto {
 
-    //puse todo igual en json, mysql y aca, no se si es asi eh
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)  //para autoincrementar, LUISINA PUSO   AUTO
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  
     private int id;
     
     @Column(length=100)
     private String rubro;
     
     @Lob
-    //@Column(name="imgPageProyecto")
     private String imgPageProyecto;
     
     @Column(length=50)
-    //@Column(name="imgPageAlt")
     private String imgPageAlt;
     
     @Lob
-    //@Column(name="hrefTargetBlank")
     private String hrefTargetBlank;
     
-//    @Column(name="")  //no se si voy a usar esto, en angular no lo meti en el html, si en el json 
-//    private String targetBlackAlt;
-    
     @Lob
-   // @Column(name="hrefRepo")
     private String hrefRepo;
     
     @Lob
-    //@Column(name="hrefLive")
     private String hrefLive;
     
     @Column(length=100)
-   // @Column(name="tituloProyecto")
     private String tituloProyecto;
     
     //@Lob
@@ -50,6 +40,7 @@ public class Proyecto {
     private String descripcion;
 
     //----------------------------------------------------------------------
+    
     public Proyecto() {
     }
 
@@ -59,7 +50,6 @@ public class Proyecto {
         this.imgPageProyecto = imgPageProyecto;
         this.imgPageAlt = imgPageAlt;
         this.hrefTargetBlank = hrefTargetBlank;
-//        this.targetBlackAlt = targetBlackAlt;
         this.hrefRepo = hrefRepo;
         this.hrefLive = hrefLive;
         this.tituloProyecto = tituloProyecto;
@@ -107,14 +97,6 @@ public class Proyecto {
     public void setHrefTargetBlank(String hrefTargetBlank) {
         this.hrefTargetBlank = hrefTargetBlank;
     }
-
-//    public String getTargetBlackAlt() {
-//        return targetBlackAlt;
-//    }
-//
-//    public void setTargetBlackAlt(String targetBlackAlt) {
-//        this.targetBlackAlt = targetBlackAlt;
-//    }
 
     public String getHrefRepo() {
         return hrefRepo;

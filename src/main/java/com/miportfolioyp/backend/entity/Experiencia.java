@@ -1,8 +1,6 @@
 package com.miportfolioyp.backend.entity;
 
-import java.util.Date;
 import javax.persistence.Column;
-//import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,6 +18,7 @@ public class Experiencia {
     private String rubro;
     
     @Lob
+    //@Column(length=800)
     private String logoLugar;
     
     @Column(length=100)
@@ -28,7 +27,6 @@ public class Experiencia {
     @Column(length=100)
     private String puesto;
     
-    //@Lob
     @Column(name="descripcion", length=800)
     private String descripcion;
     

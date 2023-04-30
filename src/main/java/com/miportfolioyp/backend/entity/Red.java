@@ -15,12 +15,9 @@ public class Red {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
     
-    //@NotNull
     @Column(name="red", length=100)
     private String nombre;
     
-    //@NotNull
-    //@Column(name="url")
     private String url;
     
     //@NotNull
@@ -29,11 +26,11 @@ public class Red {
     private String iconred;  
     
     //-----------------------------------------------------------------
+    
     public Red() {
     }
 
     public Red(int id, String nombre, String url, String iconred) {
-        //this.id = id;
         this.nombre = nombre;
         this.url = url;
         this.iconred = iconred;

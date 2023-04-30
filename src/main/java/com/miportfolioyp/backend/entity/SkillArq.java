@@ -15,7 +15,7 @@ public class SkillArq {
     
     @Column(length=100)
     private String nombre;
-    //capaz hay que poner el numero como string xq tira unos errores 'resueltos' de conversion int/string aca en el output
+    //capaz poner el numero como string xq tira unos errores 'resueltos' de conversion int/string aca en el output
     private int porcentaje;
     
     
@@ -56,8 +56,7 @@ public class SkillArq {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
-    
-    
+       
     
 }
 

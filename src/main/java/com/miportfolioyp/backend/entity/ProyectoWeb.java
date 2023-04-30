@@ -11,11 +11,8 @@ import javax.persistence.Lob;
 public class ProyectoWeb {    
         
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)  //para autoincrementar, LUISINA PUSO   AUTO
+    @GeneratedValue(strategy = GenerationType.AUTO) 
     private int id;    
-    
-    // ESTO SACO PORQUE NO SE COMO HACER EL SELECTOR, Y ESTE ENTIDAD TIENE DIFERENTES ATRIBUTOS ANYWAY 
-    //private String rubro;
     
     @Lob
     private String imgPageProyecto;
@@ -38,7 +35,7 @@ public class ProyectoWeb {
     @Column(length=900) 
     private String descripcion;
     
-    //pongo string xq quiero '2022' '2023-2055' etc, no dia/mes/anio
+    // '2022' '2023-2055' no d/m/a
     private String fecha;
     
     

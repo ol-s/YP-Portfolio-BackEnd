@@ -42,11 +42,6 @@ public class CSkillSoft {
         return "Skill creada";  
     }
       
-    /*@PutMapping("/update")   
-    public String updateSkillS(@RequestBody SkillSoft habil){  //NOMBRE QUE LLEVO A ANGULAR!                                                          
-        ssServ.updateSkillS(habil);  //NOMBRE DEL METODO EN SKILL-SOFT-SERVICIO
-        return "Skill actualizada"; //MENSAJE EN POSTMAN
-    }*/
     @PutMapping("/update/{id}") 
     public String updateSkillS(@PathVariable int id, @RequestBody SkillSoft habil){  //NOMBRE QUE LLEVO A ANGULAR!                                                          
         ssServ.updateSkillS(habil);  //NOMBRE DEL METODO EN SKILL-SOFT-SERVICIO

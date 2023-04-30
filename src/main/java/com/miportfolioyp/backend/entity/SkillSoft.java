@@ -53,9 +53,7 @@ public class SkillSoft {
 
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
-    }
-    
-    
+    }  
     
 }
 

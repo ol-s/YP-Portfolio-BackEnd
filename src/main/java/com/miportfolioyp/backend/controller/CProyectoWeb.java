@@ -1,4 +1,3 @@
-
 package com.miportfolioyp.backend.controller;
 
 import com.miportfolioyp.backend.entity.ProyectoWeb;
@@ -18,20 +17,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin("http://localhost:4200/")//(origins = "https://miportfolioyp.web.app/")
+@CrossOrigin("http://localhost:4200/")
 @RequestMapping("proyectoweb") 
 public class CProyectoWeb {
     
   @Autowired SProyectoWeb proyWebServicio;  
-    
-   
+     
     @GetMapping("/lista") 
     @ResponseBody 
     public List<ProyectoWeb> listaProyectosW(){
         return proyWebServicio.listaProyectos();  
     }
     
-    @GetMapping("/find/{id}")  //id es variable so va entre llaves
+    @GetMapping("/find/{id}")
     @ResponseBody 
     public ProyectoWeb findProyectoW(@PathVariable int id){
         return proyWebServicio.findProyecto(id);  
@@ -42,16 +40,10 @@ public class CProyectoWeb {
     public String saveProyectoW(@RequestBody ProyectoWeb proyecto){
         proyWebServicio.saveProyecto(proyecto);
         return "Proyecto creado";   
-        //return ResponseEntity.ok().body(proyecto);      //???
     }
   
-    /*@PutMapping("/update")   
-    public String updateProyectoW(@RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
-        proyWebServicio.updateProyecto(proyecto);
-        return "Proyecto actualizado";
-    }*/
     @PutMapping("/update/{id}")   
-    public String updateProyectoW(@PathVariable int id, @RequestBody ProyectoWeb proyecto){  //////////proyecto es variable, Proyecto es entidad (?) OJO
+    public String updateProyectoW(@PathVariable int id, @RequestBody ProyectoWeb proyecto){  
         proyWebServicio.updateProyecto(proyecto);
         return "Proyecto actualizado";
     }
@@ -61,6 +53,5 @@ public class CProyectoWeb {
         proyWebServicio.deleteProyecto(id);
         return "Proyecto eliminado";
     }
-     
-    
+        
 }

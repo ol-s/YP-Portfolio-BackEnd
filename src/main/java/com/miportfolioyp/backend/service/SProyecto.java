@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 @Transactional
 public class SProyecto {
        
-    //cableado a repositorio proyecto, 'proyectoRepo' es mi alias
     @Autowired RProyecto proyectoRepo;
 
 
@@ -25,7 +24,7 @@ public class SProyecto {
         return proyectoRepo.findById(id).orElse(null);   
     }
     
-    public void saveProyecto(Proyecto proyecto) { //////////////////////////////mismos nombres en el controller, OJO!!
+    public void saveProyecto(Proyecto proyecto) { //mismos nombres en el controller
         proyectoRepo.save(proyecto);  
     }  
     
